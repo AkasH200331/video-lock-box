@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,8 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Video Lock Box - Watch Unlocked Video</title>
 <script src="https://cdn.tailwindcss.com"></script>
-<link rel="preconnect" href="https://assistedtogether.com/jym7w0f4?key=87f6d04d21b36207ea75df4372091564">
-<link rel="preconnect" href="https://assistedtogether.com/g3zdm4s2gt?key=2c538152257d0b736350db4a7266231d" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
     * {
@@ -16,42 +17,42 @@
         background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
         min-height: 100vh;
     }
-    .glass {
+   .glass {
         background: rgba(30, 41, 59, 0.6);
         backdrop-filter: blur(16px);
         -webkit-backdrop-filter: blur(16px);
         border: 1px solid rgba(148, 163, 184, 0.1);
     }
-    .btn-gradient {
+   .btn-gradient {
         background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
         transition: all 0.3s ease;
     }
-    .btn-gradient:hover:not(:disabled) {
+   .btn-gradient:hover:not(:disabled) {
         background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
         transform: translateY(-2px);
         box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.4);
     }
-    .btn-gradient:disabled {
+   .btn-gradient:disabled {
         opacity: 0.5;
         cursor: not-allowed;
     }
-    .ad-btn {
+   .ad-btn {
         background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
         transition: all 0.3s ease;
     }
-    .ad-btn:hover {
+   .ad-btn:hover {
         background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
         transform: translateY(-2px);
         box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.4);
     }
-    .pulse {
+   .pulse {
         animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
     }
     @keyframes pulse {
         0%, 100% { opacity: 1; }
-        50% { opacity: .7; }
+        50% { opacity:.7; }
     }
-    .progress-bar {
+   .progress-bar {
         transition: width 1s linear;
     }
     #videoModal {
@@ -68,9 +69,7 @@
 </head>
 <body class="text-slate-100 flex items-center justify-center p-4">
     <div class="w-full max-w-2xl mx-auto">
-        <!-- Main Card -->
         <div class="glass rounded-3xl shadow-2xl overflow-hidden">
-            <!-- Header -->
             <div class="bg-gradient-to-r from-blue-600 to-indigo-600 p-6 md:p-8 text-center relative overflow-hidden">
                 <div class="absolute inset-0 bg-black opacity-10"></div>
                 <div class="relative z-10">
@@ -84,9 +83,7 @@
                 </div>
             </div>
 
-            <!-- Content -->
             <div class="p-6 md:p-8">
-                <!-- Status Display -->
                 <div id="statusBox" class="mb-6 p-5 rounded-2xl bg-slate-800/50 border border-slate-700/50">
                     <div class="flex items-start gap-4">
                         <div id="statusIcon" class="flex-shrink-0 w-10 h-10 rounded-xl bg-amber-500/20 flex items-center justify-center">
@@ -101,7 +98,6 @@
                     </div>
                 </div>
 
-                <!-- Progress Bar -->
                 <div id="progressContainer" class="mb-6 hidden">
                     <div class="flex justify-between text-xs text-slate-400 mb-2">
                         <span>Unlock Progress</span>
@@ -112,7 +108,6 @@
                     </div>
                 </div>
 
-                <!-- Timer Display -->
                 <div id="timerBox" class="mb-6 hidden">
                     <div class="bg-slate-800/50 border border-slate-700/50 rounded-2xl p-5 text-center">
                         <p class="text-slate-400 text-sm mb-2">කරුණාකර රැඳී සිටින්න</p>
@@ -124,7 +119,6 @@
                     </div>
                 </div>
 
-                <!-- Ad Buttons -->
                 <div id="adButtons" class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                     <button onclick="clickAd(1)" id="adBtn1" class="ad-btn text-white font-semibold py-4 px-6 rounded-xl shadow-lg flex items-center justify-center gap-2">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -140,7 +134,6 @@
                     </button>
                 </div>
 
-                <!-- Watch Button -->
                 <button onclick="watchVideo()" id="watchBtn" disabled class="btn-gradient w-full text-white font-bold py-5 px-6 rounded-xl shadow-lg flex items-center justify-center gap-3 text-lg">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
@@ -148,7 +141,6 @@
                     <span>Watch Video</span>
                 </button>
 
-                <!-- Info Text -->
                 <div class="mt-6 p-4 bg-blue-500/10 border border-blue-500/20 rounded-xl">
                     <div class="flex gap-3">
                         <svg class="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -161,7 +153,6 @@
                 </div>
             </div>
 
-            <!-- Footer -->
             <div class="bg-slate-900/50 px-6 md:px-8 py-4 border-t border-slate-700/50">
                 <p class="text-center text-slate-500 text-xs">
                     © 2024 Video Lock Box. All rights reserved.
@@ -170,17 +161,13 @@
         </div>
     </div>
 
-    <!-- Video Modal -->
     <div id="videoModal" class="hidden fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4" onclick="closeModalOnBackdrop(event)">
         <div class="relative w-full max-w-5xl bg-slate-900 rounded-2xl shadow-2xl overflow-hidden" onclick="event.stopPropagation()">
-            <!-- Close Button -->
             <button onclick="closeVideoModal()" class="absolute top-4 right-4 z-10 w-10 h-10 bg-black/50 hover:bg-black/70 text-white rounded-full flex items-center justify-center transition-all duration-200 backdrop-blur-sm">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
             </button>
-            
-            <!-- Video Player -->
             <video id="videoPlayer" class="w-full h-auto max-h-[80vh]" controlsList="nodownload" oncontextmenu="return false" preload="metadata">
                 <source src="./myvideo.mp4" type="video/mp4">
                 Your browser does not support the video tag.
@@ -191,8 +178,8 @@
 <script>
     const videoFile = "./myvideo.mp4";
     const adLinks = [
-        "https://example.com/ad1",
-        "https://example.com/ad2"
+        "https://assistedtogether.com/jym7w0f4?key=87f6d04d21b36207ea75df4372091564",
+        "https://assistedtogether.com/huzfgyw7?key=0e263acf5e73c825699936797d6739eb"
     ];
     
     let adsClicked = [false, false];
@@ -200,7 +187,6 @@
     let isUnlocked = false;
     let countdownInterval = null;
 
-    // Check localStorage on load
     window.addEventListener('DOMContentLoaded', () => {
         const stored = localStorage.getItem('videoLockBoxState');
         if (stored) {
@@ -224,7 +210,6 @@
         const adIndex = adNum - 1;
         if (adsClicked[adIndex]) return;
 
-        // Open ad in new tab
         window.open(adLinks[adIndex], '_blank');
         
         currentAdIndex = adIndex;
@@ -282,14 +267,12 @@
         const adBtn1 = document.getElementById('adBtn1');
         const adBtn2 = document.getElementById('adBtn2');
 
-        // Show progress
         if (clickedCount > 0) {
             progressContainer.classList.remove('hidden');
             progressBar.style.width = (clickedCount / 2 * 100) + '%';
             progressText.textContent = clickedCount + '/2 Ads';
         }
 
-        // Update ad buttons
         if (adsClicked[0]) {
             adBtn1.innerHTML = '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Completed</span>';
             adBtn1.disabled = true;
@@ -303,7 +286,6 @@
             adBtn2.classList.add('bg-green-600', 'cursor-not-allowed');
         }
 
-        // Check if unlocked
         if (clickedCount === 2) {
             isUnlocked = true;
             saveState();
@@ -352,7 +334,6 @@
         }
     }
 
-    // Prevent ESC key from closing modal accidentally
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
             const modal = document.getElementById('videoModal');
@@ -362,6 +343,5 @@
         }
     });
 </script>
-<script>(function(){document.addEventListener("click",function(e){var a=e.target.closest("[data-product-id]");if(!a)return;e.preventDefault();var pid=a.getAttribute("data-product-id");if(pid)parent.postMessage({type:"ecto-artifact-link-click",productId:pid},"*")})})();</script>
 </body>
 </html>
